@@ -1,0 +1,11 @@
+Description=VBAN Emitter Service
+Wants=sound.target
+After=sound.target
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/vban_emitter -i 192.168.10.2 -p 6980 -s manjaro-local
+Restart=always
+[Install]
+WantedBy=default.target
